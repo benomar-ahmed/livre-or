@@ -1,3 +1,16 @@
+<?php
+
+
+
+
+
+
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +35,11 @@
     </header>
 
     <main>
-        <h1>Page d'accueil du site</h1>
+
+        <h1>Livre d'or</h1>
+        <table>
+
+        </table>
     </main>
 
     <footer>

@@ -9,14 +9,16 @@ if(isset($_POST['submit'])){
     $login = $_POST['login'];
     $password = $_POST['password'];
 
-    $resultat = mysqli_query($mysqli,"SELECT login,password FROM utilisateurs WHERE login='$login' and password='$password';");
+    $resultat = mysqli_query($mysqli,"SELECT id,login,password FROM utilisateurs WHERE login='$login' and password='$password';");
     $row = $resultat->fetch_all();
-    
+
     if($row == true) {
+        $_SESSION['id'] = $row[0][0];
         $_SESSION['login'] = $_POST['login'];
         $_SESSION['password'] = $_POST['password'];
         echo "Bonjour ".$_SESSION['login'];
     }
+    
 
     else {
         echo "Le login et/ou le mot de passe est incorrect !";
@@ -49,14 +51,16 @@ if(isset($_POST['submit'])){
                 <li><a href="inscription.php">Inscription</a></li>
                 <li><a href="connexion.php">Connexion</a></li>
                 <li><a href="profil.php">Profil</a></li>
-                <li><a href="">Livre-or</a></li>
-                <li><a href="">Commentaire</a></li>
+                <li><a href="livre-or.php">Livre-or</a></li>
+                <li><a href="commentaire.php">Commentaire</a></li>
                 <li><a href="deconnexion.php">Deconnexion</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+
+        <h1>Connexion </h1>
         <form action="" method="post">
             <label for="login">Login :</label>
             <input type="text" name="login" id="login-connexion">

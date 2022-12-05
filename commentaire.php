@@ -1,10 +1,33 @@
+<?php
+
+
+session_start();
+include 'connect.php';
+
+if(isset($_POST['submit'])){
+    $id = $_SESSION['id'];
+    $date = date("Y-m-d H:i:s");
+    $commentaire = $_POST['commentaire'];
+
+
+    $resultat = mysqli_query($mysqli,"INSERT INTO `commentaires` (`id`,`commentaire`,`id_utilisateur`,`date`) VALUES (NULL,'$commentaire','$id','$date');");
+}
+
+
+
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
+    <title>Commentaires</title>
 </head>
 <body>
     <header>
@@ -22,7 +45,15 @@
     </header>
 
     <main>
-        <h1>Page d'accueil du site</h1>
+
+
+        <h1>Ajout de commentaire </h1>
+        <form action="" method="post">
+            <label for="commentaire">Entrez votre commentaire :</label>
+            <input type="text" name="commentaire" id="comment">
+
+            <input type="submit" value="Envoyez le commentaire" name="submit">
+        </form>
     </main>
 
     <footer>

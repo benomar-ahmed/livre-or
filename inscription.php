@@ -57,14 +57,17 @@ if(isset($_POST['submit'])){
                 <li><a href="inscription.php">Inscription</a></li>
                 <li><a href="connexion.php">Connexion</a></li>
                 <li><a href="profil.php">Profil</a></li>
-                <li><a href="">Livre-or</a></li>
-                <li><a href="">Commentaire</a></li>
+                <li><a href="livre-or.php">Livre-or</a></li>
+                <li><a href="commentaire.php">Commentaire</a></li>
                 <li><a href="deconnexion.php">Deconnexion</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+
+
+        <h1>Inscription</h1>
         <form action="" method="post">
             <label for="login">Login :</label>
             <input type="text" name="login" id="login-inscription" required="required">
