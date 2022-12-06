@@ -1,11 +1,10 @@
 <?php
 
 
+include 'connect.php';
 
-
-
-
-
+$resultat = mysqli_query($mysqli,"SELECT DATE_FORMAT(`date`,'%d/%m/%Y'), `login`, `commentaire` FROM `utilisateurs` INNER JOIN `commentaires` WHERE utilisateurs.id = commentaires.id_utilisateur ORDER BY `date` DESC; ");
+$row = $resultat->fetch_all();
 
 
 
@@ -28,7 +27,6 @@
                 <li><a href="connexion.php">Connexion</a></li>
                 <li><a href="profil.php">Profil</a></li>
                 <li><a href="livre-or.php">Livre-or</a></li>
-                <li><a href="commentaire.php">Commentaire</a></li>
                 <li><a href="deconnexion.php">Deconnexion</a></li>
             </ul>
         </nav>
@@ -38,8 +36,25 @@
 
         <h1>Livre d'or</h1>
         <table>
-
+            <thead>
+                <th>Posté le :</th>
+                <th>Par l'utilisateur :</th>
+                <th>Commentaires</th>
+            </thead>
+            <tbody>
+                <?php
+                for ($i=0; isset($row[$i]) ; $i++) { 
+                    echo "<tr>";
+                    for ($j=0; isset($row[$i][$j]) ; $j++) 
+                    { 
+                        echo "<td>" . $row[$i][$j] . "</td>";
+                    }
+                    echo "</tr>";
+                }
+                ?>
+            </tbody>
         </table>
+        <a href="commentaire.php">Ajout de commentaire</a>
     </main>
 
     <footer>

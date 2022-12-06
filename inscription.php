@@ -58,7 +58,6 @@ if(isset($_POST['submit'])){
                 <li><a href="connexion.php">Connexion</a></li>
                 <li><a href="profil.php">Profil</a></li>
                 <li><a href="livre-or.php">Livre-or</a></li>
-                <li><a href="commentaire.php">Commentaire</a></li>
                 <li><a href="deconnexion.php">Deconnexion</a></li>
             </ul>
         </nav>
