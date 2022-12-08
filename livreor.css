@@ -1,0 +1,312 @@
+/*######################### FONT SIZE   ######################################################*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat+Alternates:wght@600&display=swap');
+
+/*############################################################################################*/
+/*############################################################################################*/
+/*##################################     B O D Y       #######################################*/
+/*############################################################################################*/
+/*############################################################################################*/
+
+body {
+    margin: auto;
+    overflow: auto;
+    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    font-family: 'Lato', sans-serif;
+}
+
+h1{
+    font-weight: 400;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+
+
+/*############################################################################################*/
+/*############################################################################################*/
+/*################################            M A I N       ##################################*/
+/*############################################################################################*/
+/*############################################################################################*/
+
+
+
+/*#######   Index   #######*/
+
+#main-index {
+    color: white;
+    padding: 13%;
+    display: flex;
+    justify-content :center;
+}
+
+
+/*#######   Inscription #######*/
+
+#main-inscription {
+    color: white;
+    padding: 5.8%;
+    display: flex;
+    justify-content :center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#form-main-inscription{
+    display: flex;
+    flex-direction: column; 
+}
+
+#form-main-inscription label{
+    font-weight: 300;
+}
+
+
+.form-inscription{
+    width: 30%;
+    margin-left: 35%;
+    margin-bottom: 0.5%;
+    margin-top: 0.5%;
+    height: 23px;
+}
+
+#submit-inscription{
+    width: 13%;
+    margin-left: 43.1%;
+    background:transparent;
+    border: 2px solid white;
+    padding: 1%;
+    color: white;
+}
+
+/*#######   Connexion  #######*/
+
+#main-connexion {
+    color: white;
+    padding: 7.9%;
+    display: flex;
+    justify-content :center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#form-main-connexion {
+    display: flex;
+    flex-direction: column;
+}
+
+#form-main-connexion label{
+    font-weight: 300;
+}
+
+.form-connexion{
+    width: 30%;
+    margin-left: 34.5%;
+    margin-bottom: 0.5%;
+    margin-top: 0.5%;
+    height: 23px;
+}
+
+#submit-connexion{
+    width: 13%;
+    margin-left: 43%;
+    background:transparent;
+    border: 2px solid white;
+    padding: 1%;
+    color: white;
+}
+
+
+/*#######   Profil  #######*/
+
+#main-profil{
+    color: white;
+    padding: 7.8%;
+    display: flex;
+    justify-content :center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#echo-profil{
+    font-size: 120%;
+}
+
+#form-main-profil{
+    display: flex;
+    flex-direction: column;
+}
+
+#form-main-profil label{
+    font-weight: 300;
+}
+
+.form-profil{
+    width: 30%;
+    margin-left: 34.5%;
+    margin-bottom: 0.5%;
+    margin-top: 0.5%;
+    height: 23px; 
+}
+
+#submit-profil{
+    width: 13%;
+    margin-left: 43%;
+    background:transparent;
+    border: 2px solid white;
+    padding: 1%;
+    color: white;
+}
+
+/*#######   Commentaire #######*/
+
+#main-commentaire{
+    color: white;
+    padding: 9.7%;
+    display: flex;
+    justify-content :center;
+    flex-direction: column;
+    text-align: center;
+}
+.form-profil{
+    width: 35%;
+    margin-left: 32%;
+}
+
+#form-main-commentaire{
+    display: flex;
+    flex-direction: column;
+}
+
+#form-main-commentaire label{
+    font-weight: 300;
+}
+
+#submit-commentaire{
+    width: 15%;
+    margin-left: 42%;
+    background:transparent;
+    border: 2px solid white;
+    padding: 1%;
+    color: white;
+}
+
+/*#######   Livre-Or    #######*/
+
+#main-livreor{
+    color: white;
+    padding: 9.8%;
+    display: flex;
+    justify-content :center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#table-livreor{
+    box-shadow: 5px 0px 5px rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.2);
+}
+
+#table-livreor tbody tr td{
+    padding: 2%;
+    border-bottom: 2px solid black;
+}
+
+#add-comment {
+    color:white;
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 30%;
+    margin-left: 0%;
+    margin-top: 1%;
+    padding: 0.5%;
+    font-size: 115%;
+}
+
+/*############################################################################################*/
+/*############################################################################################*/
+/*################################          H E A D E R       ################################*/
+/*############################################################################################*/
+/*############################################################################################*/
+
+header {
+    box-shadow:0 5px 3px rgba(0,0,0,0.1);
+    padding: 1%;
+    font-weight: 700;
+}
+
+ul{
+    display : flex;
+    justify-content: space-around;
+    font-size: 180%;
+}
+
+ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}

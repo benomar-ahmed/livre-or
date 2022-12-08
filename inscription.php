@@ -2,43 +2,36 @@
 
 include 'connect.php';
 
-
-
+$msg=[];
 
 if(isset($_POST['submit'])){
     
 
-
+    
     $login = $_POST['login'];
     $password = $_POST['password'];
     $verify_password = $_POST['verify-password'];
 
 
     if($password == $verify_password){
-        $resultat1 = mysqli_query($mysqli,"SELECT login FROM utilisateurs;");
-        $row = $resultat1->fetch_all();
         $resultat2 = mysqli_query($mysqli,"SELECT login FROM utilisateurs WHERE login='$login';");
         $row1 = $resultat2->fetch_all();
 
         if($row1 == true){
-            echo "L'utilisateur existe déjà";
+            $msg[0]="L'utilisateur existe déjà";
         }
 
         else {
             $resultat = mysqli_query($mysqli,"INSERT INTO utilisateurs (`login`,`password`) VALUES ('$login','$password')");
-            header("Location : connexion.php");
+            header('Location: connexion.php');
         }
     }
 
     else {
-        echo "Les mot de passe ne sont pas identiques !";
+        $msg[1]="Les mot de passe ne sont pas identiques !";
     }
+
 }
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -47,42 +40,43 @@ if(isset($_POST['submit'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="livreor.css">
     <title>Inscription</title>
 </head>
 <body>
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="inscription.php">Inscription</a></li>
-                <li><a href="connexion.php">Connexion</a></li>
-                <li><a href="profil.php">Profil</a></li>
-                <li><a href="livre-or.php">Livre-or</a></li>
-                <li><a href="deconnexion.php">Deconnexion</a></li>
-            </ul>
-        </nav>
+        <?php include 'header.php'?>
     </header>
 
-    <main>
-
+    <main id="main-inscription">
 
         <h1>Inscription</h1>
-        <form action="" method="post">
+        <form action="" method="post" id="form-main-inscription">
+             
             <label for="login">Login :</label>
-            <input type="text" name="login" id="login-inscription" required="required">
+            <input type="text" name="login" class="form-inscription" required="required">
 
             <label for="password">Password :</label>
-            <input type="password" name="password" id="password-inscription" required="required">
+            <input type="password" name="password" class="form-inscription" required="required">
 
             <label for="verify-passsword">Retapez votre password :</label>
-            <input type="password" name="verify-password" id="verify-password-inscription" required="required">
+            <input type="password" name="verify-password" class="form-inscription" required="required">
 
-            <input type="submit" value="Créer mon compte" name="submit">
+            <input type="submit" value="Créer mon compte" id="submit-inscription" name="submit">
         </form>
+
+
+        <!-- CODE PHP pour afficher les message d'erreurs -->
+        <?php foreach($msg as $message):?>
+           <div><?php echo ($message); ?></div>
+         <?php endforeach; ?>
     </main>
 
-    <footer>
-        <img src="Images/icon-github.png" alt="Icone du repository github">
-    </footer>
+    <?php include 'footer.php' ?>
 </body>
 </html>

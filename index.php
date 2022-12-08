@@ -4,28 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="livreor.css">
     <title>Accueil</title>
 </head>
 <body>
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="inscription.php">Inscription</a></li>
-                <li><a href="connexion.php">Connexion</a></li>
-                <li><a href="profil.php">Profil</a></li>
-                <li><a href="livre-or.php">Livre-or</a></li>
-                <li><a href="deconnexion.php">Deconnexion</a></li>
-            </ul>
-        </nav>
+        <?php include 'header.php' ?>
     </header>
 
-    <main>
+    <main id="main-index">
         <h1>Page d'accueil du site</h1>
     </main>
 
-    <footer>
-        <img src="Images/icon-github.png" alt="Icone du repository github">
-    </footer>
+    <?php include 'footer.php' ?>
 </body>
 </html>

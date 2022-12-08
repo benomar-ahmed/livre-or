@@ -1,0 +1,15 @@
+footer{
+    display :flex;
+    justify-content: space-around;
+    font-size: 120%;
+    margin-top: 3%;
+    padding: 2%;
+}
+
+#logo-github{
+    height: 110%;
+}
+
+#logo_Laplateforme {
+    height: 50px;
+}

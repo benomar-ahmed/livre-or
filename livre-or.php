@@ -1,6 +1,6 @@
 <?php
 
-
+session_start();
 include 'connect.php';
 
 $resultat = mysqli_query($mysqli,"SELECT DATE_FORMAT(`date`,'%d/%m/%Y'), `login`, `commentaire` FROM `utilisateurs` INNER JOIN `commentaires` WHERE utilisateurs.id = commentaires.id_utilisateur ORDER BY `date` DESC; ");
@@ -16,27 +16,24 @@ $row = $resultat->fetch_all();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="livreor.css">
     <title>Accueil</title>
 </head>
 <body>
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="inscription.php">Inscription</a></li>
-                <li><a href="connexion.php">Connexion</a></li>
-                <li><a href="profil.php">Profil</a></li>
-                <li><a href="livre-or.php">Livre-or</a></li>
-                <li><a href="deconnexion.php">Deconnexion</a></li>
-            </ul>
-        </nav>
+        <?php include 'header.php' ?>
     </header>
 
-    <main>
+    <main id="main-livreor">
 
         <h1>Livre d'or</h1>
-        <table>
-            <thead>
+        <table id="table-livreor">
+            <thead id="en-tête_livreor">
                 <th>Posté le :</th>
                 <th>Par l'utilisateur :</th>
                 <th>Commentaires</th>
@@ -54,11 +51,9 @@ $row = $resultat->fetch_all();
                 ?>
             </tbody>
         </table>
-        <a href="commentaire.php">Ajout de commentaire</a>
+        <a href="commentaire.php" id="add-comment">Ajout de commentaire</a>
     </main>
 
-    <footer>
-        <img src="Images/icon-github.png" alt="Icone du repository github">
-    </footer>
+    <?php include 'footer.php' ?>
 </body>
 </html>
